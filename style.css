@@ -1,0 +1,254 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.animated-images {
+ position: relative;
+border-radius: 70%;
+ width: 100%;
+height: 350px;
+overflow: hidden;
+margin-bottom: 60px;
+}
+
+.image {
+position: relative; /* Add position relative */
+top: 100px; /* Center vertically */
+transform: translateY(3%); /* Adjust vertical centering */
+width: 200px;
+opacity: 0;
+animation: moveFade 6s linear infinite;
+}
+
+.image2 {
+animation-delay: 3s;
+}
+
+@keyframes moveFade {
+0% {
+left: -200px; /* Start off-screen to the left */
+opacity: 0;
+}
+20% {
+left: 0; /* Move to the starting visible position */
+opacity: 1;
+}
+80% {
+left: calc(100% - 200px); /* Move to the end visible position */
+opacity: 1;
+}
+100% {
+left: 100%; /* Move off-screen to the right */
+opacity: 0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Background and Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 3.0;
+  background-image: url("/baground.png");
+  background-size: 100%;
+  background-position: center;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 8px;
+  margin: 8px;
+  color: purple;
+}
+
+header img {
+  max-width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  -moz-border-image: stretch;
+}
+
+/* Title Shape and Animation */
+.text-with-shape {
+  position: relative;
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 1;
+  color: darkblue;
+}
+
+.text-with-shape::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 110px;
+  background-color: #3498db;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Animation for Title */
+.animated-title {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 3s ease-out forwards;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 30px 0;
+  color: #2c3e50;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation */
+nav {
+  background-color: brown;
+  padding: 10px 0;
+  border-radius: 150px;
+  background-position: center;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu li {
+  margin: 0 5px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 40.30s ease;
+}
+
+.nav-link:hover {
+  background-color: #555;
+  transform: scale(100.1);
+}
+
+.nav-link:active {
+  background-color: #1abc9c;
+  transform: scale(0.98);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Wrapper and Sections */
+.container-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: whitesmoke;
+  width: 80%;
+  margin: 10px;
+}
+
+.section:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  color: white;
+}
+
+#Home {
+  background: violet;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.1px;
+  margin: 20px;
+  border-radius: 80px;
+}
+
+#About {
+  background: seagreen;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.1px;
+  margin: 20px;
+}
+
+#Contact {
+  background: #2196F3;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.1px;
+  margin: 20px;
+  border-radius: 80px;
+}
+
+#Location {
+  background: saddlebrown;
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.1px;
+  margin: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: lightblue;
+  border-radius: 150px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .container-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    width: 100%;
+    margin: 5px;
+  }
+}
